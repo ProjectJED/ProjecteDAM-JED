@@ -12,7 +12,7 @@ public class AssetLoader {
     public static void load() {
 
         img = new Texture("badlogic.jpg");
-        floorimg = new Texture("map/floor-tiles-20x20.png");
+        floorimg = new Texture("floor-tiles-20x20.png");
         floor = new TiledDrawable(new TextureRegion(floorimg, 260, 60, 20, 20));
 
 
