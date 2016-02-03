@@ -2,7 +2,6 @@ package com.jed.projectejed.Screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.jed.projectejed.World.GameWorld;
@@ -12,8 +11,6 @@ import com.jed.projectejed.World.Renderer;
 public class MenuScreen implements Screen {
     Renderer renderer;
     GameWorld world;
-    private SpriteBatch batch;
-    private Texture img;
     public MenuScreen() {
 
         float screenWidth = Gdx.graphics.getWidth();
@@ -23,7 +20,7 @@ public class MenuScreen implements Screen {
         int midPointY = (int) (gameHeight / 2);
 
         world = new GameWorld();
-        renderer = new Renderer((int) gameHeight, midPointY);
+        renderer = new Renderer((int) gameHeight, midPointY, (int) gameWidth);
     }
 
     @Override

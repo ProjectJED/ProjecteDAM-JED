@@ -1,26 +1,29 @@
 package com.jed.projectejed.World;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.jed.projectejed.Helpers.AssetLoader;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.jed.projectejed.Screens.MenuScreen;
 
 
 public class Renderer {
     private SpriteBatch batch;
-
-    public Renderer(int gameHeight, int midPointY) {
+    private int gameHeight, gameWidth;
+    public Renderer(int gameHeight, int midPointY, int gameWidth) {
         batch = new SpriteBatch();
+        this.gameHeight = gameHeight;
+        this.gameWidth = gameWidth;
     }
 
     public void render() {
-        //background color
-        Gdx.gl.glClearColor(1, 0, 0, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
 
         //img badlogic
         batch.begin();
-        batch.draw(AssetLoader.img, 0, 0);
+        AssetLoader.floor.draw(batch, 0, 0, 640, 480);
         batch.end();
     }
 }
